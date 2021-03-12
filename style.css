@@ -1,0 +1,136 @@
+/* CSS VARIABLES */
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  padding-top: 60px;  
+  text-align: center;
+}
+
+
+
+
+/* HEADER */
+header {
+    padding: 20px; /*space around the header*/
+    top: 0; /*space from the top*/
+    position: fixed; /*fix if we scroll*/
+    display: flex; /*like a box*/
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6584c1;
+    width: 100%;/*all the width*/
+}
+
+.juststreemitLogo img {  
+    height: 75px; /*reduce the pic of the logo*/
+}
+  
+.main-nav a {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+  text-decoration: none;  
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.sub-nav a {
+  color: white;
+  padding-right: 50px;
+  text-decoration: none;  
+}
+
+.sub-nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* MAIN CONTIANER */
+.main-container {
+  padding: 50px;
+  padding-top: 200px;
+}
+
+.box-office {
+  display: flex;
+  justify-content: center;
+
+}
+
+.box-office a {
+  transition: transform .3s;  
+}
+
+.box-office a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+.box-office img {
+  border-radius: 2px;
+}
+
+
+.button
+{
+    height: 25px;
+    position: absolute;
+    align-items: center;
+    bottom: 5px;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0px 8px;
+    color: red;
+    text-decoration: none;
+}
+
+.button img
+{
+    border: 0;
+}
+
+
+.best-movies-cat {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-direction: line;
+  justify-content: center;
+ 
+}
+
+.best-movies-cat div {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.best-movies-cat a {
+  transition: transform .3s;  
+}
+
+.best-movies-cat a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+
+/* FOOTER */
+footer{
+  text-align: center;
+}
