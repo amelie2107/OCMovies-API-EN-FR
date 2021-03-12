@@ -4,16 +4,14 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
+/*img {
   max-width: 100%;
-}
+}*/
 
 h1 {
   padding-top: 60px;  
   text-align: center;
 }
-
-
 
 
 /* HEADER */
@@ -62,35 +60,40 @@ header {
   padding-top: 200px;
 }
 
-.box-office {
+.box-img {
   display: flex;
   justify-content: center;
-
 }
 
-.box-office a {
+/*.box-office {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 6rem;
+
+}*/
+
+.box-img a {
   transition: transform .3s;  
 }
 
-.box-office a:hover {
+.box-img a:hover {
   transition: transform .3s;
   -ms-transform: scale(1.4);
   -webkit-transform: scale(1.4);  
   transform: scale(1.4);
 }
 
-.box-office img {
-  border-radius: 2px;
-}
-
+/*.bestimg {
+  max-width: 100%;
+  height: auto;
+}*/
 
 .button
 {
     height: 25px;
-    position: absolute;
+    position: relative;
     align-items: center;
     bottom: 5px;
-    border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
     text-align: center;
@@ -99,21 +102,11 @@ header {
     text-decoration: none;
 }
 
-.button img
-{
-    border: 0;
-}
 
 
 .best-movies-cat {
-  display: flex;
-  flex-flow: row nowrap;
-  flex-direction: line;
-  justify-content: center;
- 
-}
-
-.best-movies-cat div {
+  white-space: nowrap;
+  overflow: hidden;
   overflow-x: scroll;
   overflow-y: hidden;
 }
