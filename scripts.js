@@ -7,8 +7,8 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score")
     .then(moviesInfo => {
 
       document.getElementById("bestimg").src = moviesInfo.results[0].image_url;        
- /*     document.getElementById("title").innerHTML = moviesInfo.results[0].title;        
-      document.getElementById("description").innerHTML = moviesInfo.results[0].description;  */      
+      document.getElementById("bestTitle").innerHTML = moviesInfo.results[0].title;        
+      document.getElementById("description").innerHTML = moviesInfo.results[0].description;   
       
       document.getElementById("cat1-img1").src = moviesInfo.results[1].image_url;
       document.getElementById("cat1-img2").src = moviesInfo.results[2].image_url;

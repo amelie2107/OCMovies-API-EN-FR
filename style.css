@@ -4,7 +4,6 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 h1 {
   padding-top: 60px;  
   text-align: center;
@@ -21,6 +20,7 @@ header {
     align-items: center;
     background-color: #6584c1;
     width: 100%;/*all the width*/
+    z-index: 1;
 }
 
 .juststreemitLogo img {  
@@ -60,15 +60,47 @@ header {
   padding-top: 200px;
 }
 
+.main-container img{
+  margin: 30px;
+}
+
+/* BEST MOVIES */
+
 .box-img {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.box-img .bouton{
+.boutonPlay{
   position: absolute;
   top: 80%;
+}
+
+.play{
+  color:white;
+  background-color: rgb(182, 42, 42);
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.6s ease;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.play:hover {
+  background-color: red;
+}
+
+.box-img .title{
+  position: absolute;
+  top : 73%;
+  padding: 5px;
+  background-color: white;
+  opacity: 0.75;
 }
 
 .box-img .summary{
@@ -79,36 +111,17 @@ header {
   opacity: 0.5;
 }
 
-/*.box-office {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 6rem;
-
-}*/
-
-/*.box-img a {
-  position: absolute;
-  bottom: 30px;
-  transition: transform .3s;  
-}
-
-.box-img a:hover {
-  transition: transform .3s;
-  -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);  
-  transform: scale(1.4);
-}*/
-
-
-.slideshow-container {
-  align-items: center;
-  overflow: hidden;
-}
+/* OTHERS CATEGORIES */
 
 .cat-block {
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+
+.slideshow-container {
+  align-items: center;
+  overflow: hidden;
 }
 
 .slides {
@@ -121,167 +134,21 @@ header {
   flex: 3 1 100%;
 }
 
-.mySlide > img {
-  width: 100%;
-}
-
-.main-container img{
-  margin: 30px;
-}
-
-.bouton {
-  z-index: 1;
-}
-
-/*.slideshow-container {
-  position: relative;
-  top:50px;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  overflow: hidden;
-}*/
-
-/*.carouselButton {
-  position:relative;
-
-  color: rgb(102, 154, 214);
-  font-weight: bold;
-  font-size: 35px;
-  z-index: 2;
-  cursor: pointer;
-}
-
-#prev {
-  left: 5px;
-}
-
-#next {
-  left: 35px;
-
-}*/
-
-/*.carouselButton:hover {
-  background-color: lightblue;
-}#prev:hover, #next:*/
-
-
-/*.slideshow-container .slides {
-  display: flex;
-}
-
-.slideshow-container .slides .mySlide{
-  flex: 2 1 100%;
-  position: relative;
-  margin: 20px;
-}*/
-/*.slideshow-container .slides {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  transform: translateX(200px);
-  transition: transform 0.25s;
-  width: 725px;
-} */
-
-/*.slideshow-container .slides .mySlide {
-  padding: 30px;
-}*/
-/*
-.slideshow-container .slides img {
-  padding: 30px;
-  display: none;
-}
-
-.slideshow-container .slides img.active {
-  padding: 30px;
-  display: block;
-  animation: fade 0.8s;
-}
-
-@keyframes fade{
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}*/
-
-
-
-/* Next & previous buttons */
-/*.carouselButton {
-  cursor: pointer;
-  position: absolute;
+.carouselButton {
   color: rgb(102, 154, 214);
   font-weight: bold;
   font-size: 35px;
   transition: 0.6s ease;
-  z-index: 1;
   width: 3rem;
   height: 3rem;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-#prev {
-  left: 5px;
-}
-
-#next {
-  right: 5px;
-}
-  
-#prev:hover, #next:hover {
-  padding: auto;
-  border-radius: 20px;
+.carouselButton:hover {
   background-color: lightblue;
-}*/
-
-
-
-
-
-
-/*.bestimg {
-  max-width: 100%;
-  height: auto;
-}*/
-
-/*.button
-{
-    height: 25px;
-    position: relative;
-    align-items: center;
-    bottom: 5px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 3px 8px 0px 8px;
-    color: red;
-    text-decoration: none;
-}*/
-
-
-
-/*.best-movies-cat {
-  white-space: nowrap;
-  overflow: hidden;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
-
-.best-movies-cat a {
-  transition: transform .3s;  
-}
-
-.best-movies-cat a:hover {
-  transition: transform .3s;
-  -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);  
-  transform: scale(1.4);
-}*/
 
 
 /* FOOTER */
