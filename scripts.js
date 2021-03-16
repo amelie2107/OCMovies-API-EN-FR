@@ -28,8 +28,8 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score")
   fetch("http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score")
       .then(response => response.json())
       .then(moviesInfo => {
-        console.log(moviesInfo);
-        console.log(moviesInfo.results[0].image_url);
+        /*console.log(moviesInfo);
+        console.log(moviesInfo.results[0].image_url);*/
   
         document.getElementById("cat1-img5").src = moviesInfo.results[0].image_url;
         document.getElementById("cat1-img6").src = moviesInfo.results[1].image_url;
@@ -54,8 +54,8 @@ fetch("http://localhost:8000/api/v1/titles/?genre_contains=comedy&sort_by=-imdb_
   fetch("http://localhost:8000/api/v1/titles/?genre_contains=comedy&page=2&sort_by=-imdb_score")
       .then(response => response.json())
       .then(moviesInfo => {
-        console.log(moviesInfo);
-        console.log(moviesInfo.results[0].image_url);
+        /*console.log(moviesInfo);
+        console.log(moviesInfo.results[0].image_url);*/
   
         document.getElementById("cat2-img6").src = moviesInfo.results[1].image_url;
         document.getElementById("cat2-img7").src = moviesInfo.results[2].image_url; 
@@ -78,8 +78,8 @@ fetch("http://localhost:8000/api/v1/titles/?country=france&sort_by=-imdb_score")
   fetch("http://localhost:8000/api/v1/titles/?country=france&page=2&sort_by=-imdb_score")
       .then(response => response.json())
       .then(moviesInfo => {
-        console.log(moviesInfo);
-        console.log(moviesInfo.results[0].image_url);
+        /*console.log(moviesInfo);
+        console.log(moviesInfo.results[0].image_url);*/
   
         document.getElementById("cat3-img6").src = moviesInfo.results[1].image_url;
         document.getElementById("cat3-img7").src = moviesInfo.results[2].image_url; 
@@ -102,14 +102,123 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=year")
 fetch("http://localhost:8000/api/v1/titles/?page=2&sort_by=year")
     .then(response => response.json())
     .then(moviesInfo => {
+      /*
       console.log(moviesInfo);
-      console.log(moviesInfo.results[0].image_url);
+      console.log(moviesInfo.results[0].image_url);*/
 
       document.getElementById("cat4-img6").src = moviesInfo.results[1].image_url;
       document.getElementById("cat4-img7").src = moviesInfo.results[2].image_url; 
   });
 
 
+
+/*const carouselImage = document.querySelector('.mySlide');
+const carouselButtonPrev = document.getElementById("next");
+const carouselButtonNext = document.getElementById("prev");
+*/
+//const nbOfImg = document.querySelectorAll('.slides img').length;
+/*let nbOfImg = 7;
+
+console.log('nb img');
+console.log(nbOfImg);
+console.log('bouton');
+console.log(carouselButtonNext);
+console.log('img')
+console.log(carouselImage);*/
+
+/*const items = document.querySelector(test);
+const ttt = items.querySelectorAll('img');
+console.log(ttt);
+const nbslides = ttt.length;
+console.log(nbslides);*/
+
+function nextmovies() {
+  
+  let imageIndex = 1;
+  let translateX = 0;
+
+  translateX -= 300;
+  
+  document.querySelector(".slides").style.transform = `translateX(${translateX}px)`;
+};
+function prevmovies() {
+  let imageIndex = 1;
+  let translateX = 0;
+
+  translateX += 300;
+  
+  document.querySelector(".slides").style.transform = `translateX(${translateX}px)`;
+};
+
+/*
+document.getElementById("next").onclick = function() {alert("next");};
+document.getElementById("prev").onclick = function() {alert("prev");};
+*/
+/*
+let imageIndex = 1;
+let translateX = 0;
+
+carouselButtonPrev.forEach(button => {
+  button.addEventListener('click', event => {
+    console.log(event.target.id);
+    if (event.target.id === 'prev') {
+      if (imageIndex !== 1) {
+        imageIndex--;
+        translateX += 300;
+      }
+    } else {
+      if (imageIndex !== nbOfImg) {
+        imageIndex++;
+        translateX -= 300;
+      }
+    }
+    carouselImage.style.transform = `translateX(${translateX}px)`;
+  });
+});
+console.log('tst img');
+console.log(document.querySelectorAll('.test img').length);*/
+
+/*carouselButtonNext.forEach(button => {
+  alert("coucou");*/
+  /*button.addEventListener('click', event => {
+    console.log(event.target.id);
+    if (event.target.id === 'next') {
+      if (imageIndex !== 1) {
+        imageIndex--;
+        translateX += 300;
+      }
+    } else {
+      if (imageIndex !== nbOfImg) {
+        imageIndex++;
+        translateX -= 300;
+      }
+    }
+    carouselImage.style.transform = `translateX(${translateX}px)`;
+  });*/
+/*});*/
+
+
+/*
+
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+*/
 /*console.log(data);
 var resultat = "";
 data.then((value) => {
@@ -291,7 +400,7 @@ const affichageErr = document.querySelector("#err");*/
 console.log(affichageimg);*/
 
 /*  var request = new XMLHttpRequest(); 
-
+/*
   request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
       var response = JSON.parse(this.responseText);

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css"/>
     <script src="scripts.js"></script> 
+    <script src="carousel.js"></script> 
     <title>JustStreamIt</title>
   </head>
   <body>
@@ -30,68 +31,90 @@
     <!-- MAIN CONTAINER -->
 
     <section class="main-container" >
-      <div class="location" id="home">
-
-          <!--Best movies idbm-->
-          <div class="box-img">
-            <!--h1 id="title"></h1>
-            <p id="description"></p-->
-            <a href="" class="box-text">
-              <img src="" alt="" id="bestimg" width=300/>
-              <a href="#" class="button"><button>Lire la video</button></a>
-            <!--a href=""><img src="" alt="" id="bestimg"/></a-->
-            <!--a href="#" class="button">Lire la vidéo<img src="" alt="" /></a-->
-            </a> 
-          </div>
  
-          <!--7 other best movies idbm-->
-          <h1>Popular on JustStreamIt</h1>
-          <div class="best-movies-cat">
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img1"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img2"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img3"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img4"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img5"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img6"></a>
-            <a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img7"></a>
-          </div>
-         
-         <!--7 best comedy movies idbm-->
-         <h1>Popular comedies</h1>
-         <div class="best-movies-cat">
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img1"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img2"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img3"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img4"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img5"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img6"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img7"></a>
-         </div>
-
-         <!--7 best french movies idbm-->
-         <h1>Popular french movies</h1>
-         <div class="best-movies-cat">
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img1"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img2"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img3"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img4"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img5"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img6"></a>
-           <a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img7"></a>
-         </div>
-
-        <!--7 best old movies idbm-->
-        <h1>Popular old movies</h1>
-        <div class="best-movies-cat">
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img1"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img2"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img3"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img4"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img5"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img6"></a>
-          <a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img7"></a>
-        </div>
+      <!--Best movies idbm-->
+      <div class="box-img">
+          <div class='image'><img src="" alt="" id="bestimg" width=300/></div>
+          <div class='bouton'><button id="readMovie">Lire la video</button></div>
+          <div class='summary'>blabla</div>
       </div>
+
+      <!--7 other best movies idbm-->
+      <h1>Popular on JustStreamIt</h1>
+      <!-- Carousel items -->
+      <div class="cat-block" id="best-movies-cat">
+        <div class="bouton"><button class="carouselButton prev" id='prev'>&#10094;</button></div>
+        <div class="slideshow-container">
+          <div class="slides">
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img1"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img2"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img3"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img4"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img5"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img6"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat1-img7"></a></div>
+          </div>
+        </div>
+        <div class="bouton"><button class="carouselButton next" id="next">&#10095;</button></div>
+      </div>
+
+        <!--7 best comedy movies idbm-->
+        <h1>Popular comedies</h1>
+        <!-- Carousel items -->
+        <div class="cat-block" id="best-comedies-cat">
+          <div class="bouton"><button class="carouselButton prev" id='prev'>&#10094;</button></div>
+          <div class="slideshow-container">
+            <div class="slides">
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img1"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img2"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img3"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img4"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img5"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img6"></a></div>
+              <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat2-img7"></a></div>
+            </div>
+          </div>
+          <div class="bouton"><button class="carouselButton next" id="next">&#10095;</button></div>
+        </div>
+
+        <!--7 best french movies idbm-->
+        <h1>Popular french movies</h1>
+        <!-- Carousel items -->
+        <div class="cat-block" id="best-french-cat">
+        <div class="bouton"><button class="carouselButton prev" id='prev'>&#10094;</button></div>
+        <div class="slideshow-container">
+          <div class="slides">
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img1"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img2"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img3"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img4"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img5"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img6"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat3-img7"></a></div>
+          </div>
+        </div>
+        <div class="bouton"><button class="carouselButton next" id="next">&#10095;</button></div>
+      </div>
+
+      <!--7 best old movies idbm-->
+      <h1>Popular old movies</h1>
+      <!-- Carousel items -->
+      <div class="cat-block" id="best-old-cat">
+        <div class="bouton"><button class="carouselButton prev" id='prev'>&#10094;</button></div>
+        <div class="slideshow-container">
+          <div class="slides">
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img1"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img2"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img3"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img4"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img5"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img6"></a></div>
+            <div class="mySlide"><a href=""><img src="JustSteamItLogo.png" alt="" id="cat4-img7"></a></div>
+          </div>
+        </div>
+        <div class="bouton"><button class="carouselButton next" id="next">&#10095;</button></div>
+      </div>
+
     </section>
     <!-- END OF MAIN CONTAINER -->
 
