@@ -1,14 +1,17 @@
 /* CSS VARIABLES */
 
-html, body {
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-h1 {
+html, body {
+  font-family: 'Bookman Old Style', serif, Arial, Helvetica, sans-serif;
+}
+
+body h1 {
   padding-top: 60px;  
   text-align: center;
 }
-
 
 /* HEADER */
 header {
@@ -72,6 +75,18 @@ header {
   justify-content: center;
 }
 
+.box-img .image {
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.box-img .image img {
+  width: 800px;
+  height: auto;
+  transform: translateY(-25%);
+}
+
 .boutonPlay{
   position: absolute;
   top: 80%;
@@ -97,15 +112,18 @@ header {
 
 .box-img .title{
   position: absolute;
-  top : 73%;
+  top : 60%;
+  left: 10%;
   padding: 5px;
   background-color: white;
-  opacity: 0.75;
+  font-size: xx-large;
+  opacity: 0.5;
 }
 
 .box-img .summary{
   position: absolute;
-  top : 87%;
+  top : 70%;
+  left: 10%;
   padding: 5px;
   background-color: white;
   opacity: 0.5;
@@ -150,6 +168,93 @@ header {
   background-color: lightblue;
 }
 
+/* MODAL */
+
+/* Foncer l'arrière-plan de la fenêtre modale */
+.modal {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* la fenêtre modale  */
+.modal-content {
+  position: relative;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  /*if the box is over the window*/
+  /*max-height: calc(100vw - 20px);*/
+  height: 500px;
+  /*if the box is over the window*/
+  max-width: calc(100vh - 20px);
+  width: 700px;
+  /*scroll if needed*/
+
+}
+
+.modal-header {
+  position: fixed;
+  justify-content: center;
+  max-width: calc(100vh - 20px);
+  width: 700px;
+  height: 80px;
+  background: #0071bc;
+  color: #fff;
+  text-align: left;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1;
+
+}
+
+.modal-body {
+  position: relative;
+  top: 80px;
+  padding: 20px;
+  height: 400px;
+  max-width: calc(100vh - 20px);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.modal-content h1{
+  padding-top: 0px;  
+}
+
+.modal-content img{
+    margin: auto;
+    display: block;
+}
+
+.modal p {
+  text-align: center;
+  font-style: italic;
+  color: #4a4747;
+}
+
+.modal .description {
+  font-weight: bold;
+}
+
+
+.closebtn{
+  position: absolute;
+  justify-content: center;
+  top: 30px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  color: black;
+  cursor: pointer;
+}
 
 /* FOOTER */
 footer{
