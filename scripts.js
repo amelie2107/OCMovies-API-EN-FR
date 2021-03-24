@@ -1,8 +1,8 @@
-/*lancer l'API avec cette commande dans le Terminal : pipenv run python manage.py runserver */
+/*Run the API with this command in the terminal : pipenv run python manage.py runserver */
 
 async function main(){
 
-  /* BEST MOVIES */
+  /* BEST MOVIES - get info for page display - image, URI, (title and description only for the best movies*/
   let APIrequestBest1 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
   let APIrequestBest2 = "http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score";
 
@@ -14,11 +14,12 @@ async function main(){
   htmlLinkTargetInfo(bestMoviesData, 0, 1, "cat1-img1", "img");
   htmlLinkTargetInfo(bestMoviesData, 0, 1, "bestTitle", "title");
   htmlLinkTargetInfo(bestMoviesData, 0, 1, "description", "sumup");
+  htmlLinkTargetInfo(bestMoviesData, 0, 1, "cat1-img1", "url");
 
   htmlLink(bestMoviesData, 1, 8);
   
  
-  /* BEST COMEDIES */
+  /* BEST COMEDIES - get info for page display - image, URI*/
   let APIrequestComedies1 = "http://localhost:8000/api/v1/titles/?genre_contains=comedy&sort_by=-imdb_score";
   let APIrequestComedies2 = "http://localhost:8000/api/v1/titles/?genre_contains=comedy&page=2&sort_by=-imdb_score";
 
@@ -31,7 +32,7 @@ async function main(){
 
   
   
-  /* BEST FRENCH */
+  /* BEST FRENCH - get info for page display - image, URI*/
   let APIrequestFrench1 = "http://localhost:8000/api/v1/titles/?country=france&sort_by=-imdb_score";
   let APIrequestFrench2 = "http://localhost:8000/api/v1/titles/?country=france&page=2&sort_by=-imdb_score";
 
@@ -43,7 +44,7 @@ async function main(){
   htmlLink(bestFrenchData, 0, 7);
 
   
-  /* BEST OLD */
+  /* BEST OLD - get info for page display - image, URI*/
   let APIrequestOld1 = "http://localhost:8000/api/v1/titles/?sort_by=year";
   let APIrequestOld2 = "http://localhost:8000/api/v1/titles/?page=2&sort_by=year";
 
@@ -56,17 +57,26 @@ async function main(){
  
 }
 
+/* get response of the API for a movie's URL with details of the movies
+URL in paramaters : the URL of a particular movie
+Return : promise with short information regarding the movie*/
 async function getRequest(URL){
   let response = await fetch(URL);
   let data = await response.json();
   return data;
 }
 
+/* URL in parameters : a page return by the API, 5 links toward a movie by page
+Return : results of the promise with short information regarding the 5 movies */
 async function getURLs(URL){
   let promise = await getRequest(URL);
   return promise.results;
 }
 
+/* This function allow to retreive and concat all the URLs 
+of the movies define in both promises in an unique variable
+Parameters : 2 promises with 5 movies in each
+Return : a list of movies URL*/
 function URLlst(promise1, promise2){
   let urlList = [];
   for (let i in promise1){
@@ -82,6 +92,9 @@ function URLlst(promise1, promise2){
   return urlList;
 }
 
+/* from URL of the moviesresponse retreive full information regarding the movie
+parameters : URL of the movie, htmlId to define the position of the object in the HTML page
+return : an object with informations needed for the display*/
 async function getMovieInfo(URL, htmlId){
 
   let promise = await getRequest(URL);
@@ -96,6 +109,9 @@ async function getMovieInfo(URL, htmlId){
   return info;
 }
 
+/* from URL of the moviesresponse retreive full information regarding the movie
+parameters : URL of the movie, htmlId to define the position of the object in the HTML page
+return : an object with more than full informations needed for the display*/
 async function getFullMovieInfo(URL){
 
   let promise = await getRequest(URL);
@@ -119,6 +135,8 @@ async function getFullMovieInfo(URL){
   return info;
 }
 
+/* Paramaters : a list of URLs, html element to place information in the HTML page
+Return : a list of object with all movies information */
 async function getMoviesInfo(urlLst, htmleltId){
   let dictlst = [];
   let data;
@@ -131,6 +149,10 @@ async function getMoviesInfo(urlLst, htmleltId){
   return dictlst;
 }
 
+/* Place data in the HTML page
+Parameters : A list of movies information, 
+FROM which element of the list TO which element of the list we will use
+Return : no return but image and URL are push in the HTML page*/
 function htmlLink(dataLst, from, to){
   let htmlId;
   for (let i = from; i<to; i++){
@@ -140,10 +162,18 @@ function htmlLink(dataLst, from, to){
   }
 }
 
+/* Place a specific data in the HTML page
+Parameters : A list of movies information, 
+FROM which element of the list TO which element of the list we will use
+HTMLID where we want to place the element
+KeyData is the name of the element we want to place
+Return : no return but specific data is push in the HTML page*/
 function htmlLinkTargetInfo(dataLst, from, to, htmlId, keyData){
   for (let i = from; i<to; i++){
     if (keyData === 'img'){
       document.getElementById(htmlId).src = dataLst[i][keyData];
+    } else if (keyData === 'url') {
+      document.getElementById(htmlId).id = dataLst[i][keyData]; 
     } else {
       document.getElementById(htmlId).innerHTML = dataLst[i][keyData];   
     }

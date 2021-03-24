@@ -23,7 +23,7 @@ header {
     align-items: center;
     background-color: #6584c1;
     width: 100%;/*all the width*/
-    z-index: 1;
+    z-index: 1; /*over all elements*/
 }
 
 .juststreemitLogo img {  
@@ -54,7 +54,7 @@ header {
 }
 
 
-/* MAIN CONTIANER */
+/* MAIN CONTAINER */
 .main-container {
   box-sizing: border-box;
   margin: auto;
@@ -152,6 +152,7 @@ header {
   flex: 3 1 100%;
 }
 
+/* Define the style and position of the nav button for the carousel */
 .carouselButton {
   color: rgb(102, 154, 214);
   font-weight: bold;
@@ -170,7 +171,7 @@ header {
 
 /* MODAL */
 
-/* Foncer l'arrière-plan de la fenêtre modale */
+/* full screen shadow when the modal is open */
 .modal {
   position: fixed;
   top:0;
@@ -184,25 +185,23 @@ header {
   justify-content: center;
 }
 
-/* la fenêtre modale  */
+/* the modal  */
 .modal-content {
   position: relative;
   justify-content: center;
   background-color: #fff;
   border-radius: 20px;
-  /*if the box is over the window*/
-  /*max-height: calc(100vw - 20px);*/
   height: 500px;
   /*if the box is over the window*/
   max-width: calc(100vh - 20px);
   width: 700px;
-  /*scroll if needed*/
-
 }
 
+/* fix the header of the modal when scroll, allow also to keep visible the close button */
 .modal-header {
   position: fixed;
   justify-content: center;
+  /*if the box is over the window*/
   max-width: calc(100vh - 20px);
   width: 700px;
   height: 80px;
@@ -215,6 +214,7 @@ header {
 
 }
 
+/* define the body of the modal to ajuste the scroll bar */
 .modal-body {
   position: relative;
   top: 80px;
@@ -226,14 +226,16 @@ header {
 }
 
 .modal-content h1{
-  padding-top: 0px;  
+  padding-top: 0;  
 }
 
+/* center the image in the modal */
 .modal-content img{
     margin: auto;
     display: block;
 }
 
+/* define the style of the text in the modal */
 .modal p {
   text-align: center;
   font-style: italic;
@@ -244,12 +246,12 @@ header {
   font-weight: bold;
 }
 
-
+/* define the style and position of the close button */
 .closebtn{
   position: absolute;
   justify-content: center;
   top: 30px;
-  right: 0px;
+  right: 0;
   width: 50px;
   height: 50px;
   color: black;

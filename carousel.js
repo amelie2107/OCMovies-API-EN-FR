@@ -43,6 +43,10 @@ window.onload = () => {
 
 }
 
+/*Button to move to the next best movies
+if the actual position (compteur) of the diapo is smallest than the maximum width of the diapo, 
+then we can move the diapo to the left but if this new position is over
+the maximum width of the diapo we move only to the maximum width of the diapo*/
 function slideNext(){
 
     if(compteur < diapoWidthmax){
@@ -54,9 +58,12 @@ function slideNext(){
 
     let decal = -compteur
     elements.style.transform = `translateX(${decal}px)`
-    //elt.style.transform = `translateX(${decal}px)`
- }
+}
 
+/*Button to move to the previous best movie
+if the actual position (compteur) of the diapo is over zero, 
+then we can move the diapo to the right but if this new position is under zero
+we move only to zero (the initial position)*/
 function slidePrev(){
  
     if(compteur > 0) {
@@ -68,10 +75,13 @@ function slidePrev(){
 
     let decal = -compteur   
     elements.style.transform = `translateX(${decal}px)`
-    //elt.style.transform = `translateX(${decal}px)`
- }
+}
 
- function slideNextCom(){
+/*Button to move to the next best comedie
+if the actual position (compteur) of the diapo is smallest than the maximum width of the diapo, 
+then we can move the diapo to the left but if this new position is over
+the maximum width of the diapo we move only to the maximum width of the diapo*/
+function slideNextCom(){
 
     if(compteurComedies < diapoWidthmax){
         compteurComedies+=slideWidth
@@ -82,9 +92,12 @@ function slidePrev(){
 
     let decal = -compteurComedies
     elementsComedies.style.transform = `translateX(${decal}px)`
-    //elt.style.transform = `translateX(${decal}px)`
- }
+}
 
+/*Button to move to the previous best comedie
+if the actual position (compteur) of the diapo is over zero, 
+then we can move the diapo to the right but if this new position is under zero
+we move only to zero (the initial position)*/
 function slidePrevCom(){
  
     if(compteurComedies > 0) {
@@ -96,10 +109,13 @@ function slidePrevCom(){
 
     let decal = -compteurComedies 
     elementsComedies.style.transform = `translateX(${decal}px)`
-    //elt.style.transform = `translateX(${decal}px)`
- }
+}
 
- function slideNextFrench(){
+/*Button to move to the next best french movie
+if the actual position (compteur) of the diapo is smallest than the maximum width of the diapo, 
+then we can move the diapo to the left but if this new position is over
+the maximum width of the diapo we move only to the maximum width of the diapo*/
+function slideNextFrench(){
 
     if(compteurFrench < diapoWidthmax){
         compteurFrench+=slideWidth
@@ -110,8 +126,12 @@ function slidePrevCom(){
 
     let decal = -compteurFrench
     elementsFrench.style.transform = `translateX(${decal}px)`
- }
+}
 
+/*Button to move to the previous best french movie
+if the actual position (compteur) of the diapo is over zero, 
+then we can move the diapo to the right but if this new position is under zero
+we move only to zero (the initial position)*/
 function slidePrevFrench(){
  
     if(compteurFrench > 0) {
@@ -123,8 +143,13 @@ function slidePrevFrench(){
 
     let decal = -compteurFrench
     elementsFrench.style.transform = `translateX(${decal}px)`
-  }
- function slideNextOld(){
+}
+
+/*Button to move to the next best french movie
+if the actual position (compteur) of the diapo is smallest than the maximum width of the diapo, 
+then we can move the diapo to the left but if this new position is over
+the maximum width of the diapo we move only to the maximum width of the diapo*/
+function slideNextOld(){
 
     if(compteurOld < diapoWidthmax){
         compteurOld+=slideWidth
@@ -135,8 +160,12 @@ function slidePrevFrench(){
 
     let decal = -compteurOld
     elementsOld.style.transform = `translateX(${decal}px)`
- }
+}
 
+/*Button to move to the previous best old movie
+if the actual position (compteur) of the diapo is over zero, 
+then we can move the diapo to the right but if this new position is under zero
+we move only to zero (the initial position)*/
 function slidePrevOld(){
  
     if(compteurOld > 0) {
@@ -148,4 +177,4 @@ function slidePrevOld(){
 
     let decal = -compteurOld 
     elementsOld.style.transform = `translateX(${decal}px)`
- }
+}
