@@ -14,9 +14,18 @@ window.onload = () => {
  
     // compute the width of the diapo
     slideWidth = 400//elements.getBoundingClientRect().width
-    diapoWidthmax = 1200//diapo.getBoundingClientRect().width
-    diapoWidth = 1000//diapo.getBoundingClientRect().width
-       
+    diapoWidthmax = 1200
+    diapoWidth = 1000
+    
+    /* for responsive website*/
+    elt = document.querySelector(".slideshow-container")
+    eltW = elt.getBoundingClientRect().width
+    if(eltW < slideWidth){
+        slideWidth = 205
+        diapoWidthmax = 1550
+        diapoWidth = slideWidth * 6
+    }
+
     //Next/Prev button
     let next = document.querySelector("#next-best")
     let prev = document.querySelector("#prev-best")
@@ -48,14 +57,14 @@ if the actual position (compteur) of the diapo is smallest than the maximum widt
 then we can move the diapo to the left but if this new position is over
 the maximum width of the diapo we move only to the maximum width of the diapo*/
 function slideNext(){
-
     if(compteur < diapoWidthmax){
         compteur+=slideWidth
+  
         if(compteur > diapoWidth){
             compteur = diapoWidth
         }
     }
-
+ 
     let decal = -compteur
     elements.style.transform = `translateX(${decal}px)`
 }

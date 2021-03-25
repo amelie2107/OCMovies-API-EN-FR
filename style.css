@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html, body {
   font-family: 'Bookman Old Style', serif, Arial, Helvetica, sans-serif;
 }
@@ -12,6 +13,7 @@ body h1 {
   padding-top: 60px;  
   text-align: center;
 }
+
 
 /* HEADER */
 header {
@@ -24,6 +26,17 @@ header {
     background-color: #6584c1;
     width: 100%;/*all the width*/
     z-index: 1; /*over all elements*/
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 20px; /*space around the header*/
+    top: 0; /*space from the top*/
+    position: fixed; /*fix if we scroll*/
+    background-color: #6584c1;
+    width: 100%;/*all the width*/
+    z-index: 1; /*over all elements*/
+  }
 }
 
 .juststreemitLogo img {  
@@ -43,29 +56,44 @@ header {
   text-decoration: underline;
 }
 
-.sub-nav a {
-  color: white;
-  padding-right: 50px;
-  text-decoration: none;  
-}
+@media (max-width: 800px) {
 
-.sub-nav a:hover {
-  text-decoration: underline;
+  .sub-nav a {
+    display: none;
+  }
 }
 
 
 /* MAIN CONTAINER */
 .main-container {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   margin: auto;
   width: 50%;
   position: relative;
   padding-top: 200px;
 }
 
+
+
 .main-container img{
   margin: 30px;
 }
+
+@media (max-width: 800px) {
+
+  .main-container {
+    /*box-sizing: border-box;*/
+    margin: 0;
+    width: 100%;
+    position: relative;
+    padding-top: 150px;
+  }
+  
+  .main-container img{
+    margin: 10px;
+  }
+}
+
 
 /* BEST MOVIES */
 
@@ -90,6 +118,21 @@ header {
 .boutonPlay{
   position: absolute;
   top: 83%;
+}
+
+@media (max-width: 800px) {
+  
+  .box-img .image img {
+    width: 400px;
+    height: auto;
+    transform: translateY(-25%);
+  }
+  
+  .boutonPlay{
+    position: absolute;
+    top: 50%;
+  }
+  
 }
 
 .play{
@@ -138,6 +181,7 @@ header {
   justify-content: space-between;
 }
 
+
 .slideshow-container {
   align-items: center;
   overflow: hidden;
@@ -152,6 +196,32 @@ header {
 .mySlide {
   flex: 3 1 100%;
 }
+
+
+@media (max-width: 800px) {
+  .cat-block {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .slideshow-container {
+    align-items: center;
+    overflow: hidden;
+    max-width: 182px;
+  }
+  
+  .slides {
+    display: flex;
+    width: 700px;
+    transition: 1s linear;
+  }
+  
+  .mySlide {
+    flex: 3 1 100%;
+  }
+}
+
 
 /* Define the style and position of the nav button for the carousel */
 .carouselButton {
@@ -210,10 +280,27 @@ header {
   color: #fff;
   text-align: left;
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-right-radius: 20px;  
   z-index: 1;
 
 }
+@media (max-width: 800px) {
+  .modal-header {
+    position: fixed;
+    /*if the box is over the window*/
+    width: 100%;
+    max-width: calc(100vh - 20px);
+    height: 80px;
+    background: #0071bc;
+    color: #fff;
+    text-align: left;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1;
+  }
+}
+
+
 
 /* define the body of the modal to ajuste the scroll bar */
 .modal-body {
@@ -227,7 +314,7 @@ header {
 }
 
 .modal-content h1{
-  padding-top: 0;  
+  padding-top: 0;
 }
 
 /* center the image in the modal */
@@ -238,6 +325,7 @@ header {
 
 /* define the style of the text in the modal */
 .modal p {
+  max-width: fit-content;
   text-align: center;
   font-style: italic;
   color: #4a4747;
@@ -258,6 +346,7 @@ header {
   color: black;
   cursor: pointer;
 }
+
 
 /* FOOTER */
 footer{
