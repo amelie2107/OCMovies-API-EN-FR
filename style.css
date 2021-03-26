@@ -14,12 +14,12 @@ body h1 {
   text-align: center;
 }
 
-
 /* HEADER */
 header {
     padding: 20px; /*space around the header*/
     top: 0; /*space from the top*/
     position: fixed; /*fix if we scroll*/
+    left: 0;
     display: flex; /*like a box*/
     justify-content: space-between;
     align-items: center;
@@ -30,9 +30,9 @@ header {
 
 @media (max-width: 800px) {
   header {
-    padding: 20px; /*space around the header*/
     top: 0; /*space from the top*/
     position: fixed; /*fix if we scroll*/
+    left : 0;
     background-color: #6584c1;
     width: 100%;/*all the width*/
     z-index: 1; /*over all elements*/
@@ -75,7 +75,7 @@ header {
 
 
 
-.main-container img{
+.main-container .cat-block img{
   margin: 30px;
 }
 
@@ -89,7 +89,7 @@ header {
     padding-top: 150px;
   }
   
-  .main-container img{
+  .main-container .cat-block img{
     margin: 10px;
   }
 }
@@ -107,6 +107,15 @@ header {
   width: 800px;
   height: 500px;
   overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .box-img .image {
+    width: 800px;
+    height: 400px;
+    margin: 0;
+    overflow: hidden;
+  }
 }
 
 .box-img .image img {
@@ -183,7 +192,6 @@ header {
 
 
 .slideshow-container {
-  align-items: center;
   overflow: hidden;
 }
 
@@ -259,7 +267,6 @@ header {
 /* the modal  */
 .modal-content {
   position: relative;
-  justify-content: center;
   background-color: #fff;
   border-radius: 20px;
   height: 500px;
@@ -278,7 +285,6 @@ header {
   height: 80px;
   background: #0071bc;
   color: #fff;
-  text-align: left;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;  
   z-index: 1;
@@ -338,7 +344,6 @@ header {
 /* define the style and position of the close button */
 .closebtn{
   position: absolute;
-  justify-content: center;
   top: 30px;
   right: 0;
   width: 50px;
