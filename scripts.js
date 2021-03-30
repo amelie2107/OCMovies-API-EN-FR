@@ -61,7 +61,7 @@ async function main(){
 URL in paramaters : the URL of a particular movie
 Return : promise with short information regarding the movie*/
 async function getRequest(URL){
-  let response = await fetch(URL);
+  let response = await fetch(URL).catch(error => console.log(error));
   let data = await response.json();
   return data;
 }
